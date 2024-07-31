@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:BrochaGorda5363922.ViewModels"
+             x:Class="BrochaGorda5363922.MainPage"
+             BackgroundColor="Black">
+
+    <ContentPage.BindingContext>
+        <viewmodel:MainViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="color.jpg"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label
+    Text="Empresa LA BROCHA GORDA"
+    FontAttributes="Bold"
+    FontFamily="Cambria"
+    FontSize="25"
+    TextColor="Gainsboro"
+    VerticalTextAlignment="Center"
+    HorizontalTextAlignment="Center"/>
+
+            <Label
+Text="Presupuesto"
+FontAttributes="Bold"
+FontFamily="Cambria"
+FontSize="25"
+TextColor="Gainsboro"
+VerticalTextAlignment="Center"
+HorizontalTextAlignment="Center"/>
+
+
+            <Label
+  Text="Digite su nombre completo"
+  FontFamily="Arial Black"
+  FontSize="14"
+  VerticalTextAlignment="Center"
+  HorizontalTextAlignment="Center"/>
+
+            <Entry
+Text="{Binding Nombre}"
+WidthRequest="250"
+Placeholder="Ingrese su nombre completo"
+PlaceholderColor="LightGray"/>
+
+            <Label
+    Text="Digite los metros cuadrados"
+    FontFamily="Arial Black"
+    FontSize="14"
+    VerticalTextAlignment="Center"
+    HorizontalTextAlignment="Center"/>
+
+            <Entry
+  Text="{Binding Tamaño}"
+  WidthRequest="250"
+  Placeholder="Ingrese la  cantidad de metros"
+  PlaceholderColor="LightGray"/>
+
+            <Button
+     BackgroundColor="BlueViolet"
+     TextColor="White"
+     Text="Calcular Presupuesto"
+     x:Name="Suma"
+      WidthRequest="200"
+     Command="{Binding PresupuestoCommand}"/>
+
+            <Label
+    Text="Su costo es  de:"
+    FontFamily="Arial Black"
+    FontSize="14"
+    VerticalTextAlignment="Center"
+    HorizontalTextAlignment="Center"/>
+
+            <Entry
+   Text="{Binding CostoTotal}"
+   WidthRequest="150"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
